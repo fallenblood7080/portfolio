@@ -3,8 +3,8 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
-const RESOURCES = {"assets/AssetManifest.bin": "ae583ce1c0f10653a60c5d6f175cf310",
-"assets/AssetManifest.json": "f4171acbf1a8e306c9cb6c30495d93bb",
+const RESOURCES = {"assets/AssetManifest.bin": "64b5a1b90f58b2509e21eb467be764a2",
+"assets/AssetManifest.json": "8bb0f596522d1a5656136059b8ba68ac",
 "assets/assets/blender.png": "dd90b892c81d5ec293b5383c3c948de2",
 "assets/assets/csharp.png": "e7b8fcd4ceb430ffc60ed55e5ab98fa5",
 "assets/assets/discord.png": "a9ab4928517e02c39380e9d47f567bef",
@@ -14,6 +14,7 @@ const RESOURCES = {"assets/AssetManifest.bin": "ae583ce1c0f10653a60c5d6f175cf310
 "assets/assets/Gmail.png": "e586088177d08d80c6d94c25f5c92c86",
 "assets/assets/gokapture.jpeg": "abced6735428989221dd26447d5777c7",
 "assets/assets/ideekay.jpeg": "0fd047ec00b19966ddf25c467179cecc",
+"assets/assets/insanity.png": "4cabd7d4ca0912348da9a090249df75c",
 "assets/assets/itch.png": "b67f10044e1189a764815d4c687206b5",
 "assets/assets/juicejam.gif": "58fefef08a9b823d9d2ed2d717e8c94e",
 "assets/assets/linkedin.png": "d0c5e66a89c332d63911e63b5024f47a",
@@ -45,9 +46,9 @@ const RESOURCES = {"assets/AssetManifest.bin": "ae583ce1c0f10653a60c5d6f175cf310
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
-"index.html": "a67de623e5fff502abb4fd61fc8c1fc3",
-"/": "a67de623e5fff502abb4fd61fc8c1fc3",
-"main.dart.js": "61a34a472072625a1052967c345cdb31",
+"index.html": "3cb57550386641c5af6dd185dba08420",
+"/": "3cb57550386641c5af6dd185dba08420",
+"main.dart.js": "d46503f6c0b0d36db717ef0bfa3c8e10",
 "manifest.json": "e74af8957b5899dc6da961caee768ec9",
 "version.json": "0325640b78b9f97959290dc5ebb8b3ed"};
 // The application shell files that are downloaded before a service worker can
