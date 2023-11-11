@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/skill.dart';
-
+import 'connect.dart';
+import 'skill.dart';
 import 'clan.dart';
 import 'mission.dart';
 import 'prologue.dart';
@@ -31,7 +31,8 @@ class _PortfolioState extends State<Portfolio> {
             const Prologue(),
             const Clan(),
             const Mission(),
-            const Skills()
+            const Skills(),
+            const ConnectMe()
           ],
         ),
       ),
