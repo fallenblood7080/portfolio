@@ -13,46 +13,165 @@ class Skills extends StatelessWidget {
         width: double.infinity,
         color: const Color(0xFF151515),
         padding: const EdgeInsets.all(16),
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          const AnimatedTextFlicker(title: "Skills", speed: Duration(milliseconds: 2000), pause: Duration.zero),
-          CarouselSlider(
-              items: [
-                SkillCard(
-                    skillname: "Unity",
-                    skillLevel: "82/100",
-                    skillRank: "Master",
-                    imgSrc: "assets/Unity.png",
-                    skillRankColor: Colors.purple.shade600,),
-                SkillCard(
-                    skillname: "C#", skillLevel: "75/100", skillRank: "Apex", imgSrc: "assets/csharp.png", skillRankColor: Colors.red.shade500,),
-                SkillCard(
-                    skillname: "Flutter/Dart",
-                    skillLevel: "56/100",
-                    skillRank: "Elite",
-                    imgSrc: "assets/flutter.png",
-                    skillRankColor: Colors.orange.shade500),
-                SkillCard(
-                    skillname: "Blender",
-                    skillLevel: "45/100",
-                    skillRank: "Virtuoso",
-                    imgSrc: "assets/blender.png",
-                    skillRankColor: Colors.green.shade500),
-                SkillCard(
-                    skillname: "Python",
-                    skillLevel: "40/100",
-                    skillRank: "Vangruard",
-                    imgSrc: "assets/python.png",
-                    skillRankColor: Colors.blue.shade500),
-              ],
-              options: CarouselOptions(
-                autoPlay: true,
-                disableCenter: true,
-                height: 400,
-                viewportFraction: 0.35,
-                enlargeCenterPage: true,
+        child: LayoutBuilder(
+              builder: (BuildContext context, BoxConstraints constraints) {
+                if (constraints.maxWidth < 500) {
+                  return const MobileSkillView();
+                } else if (constraints.maxWidth < 900) {
+                  return const TabletSkillView();
+                } else {
+                  return const DesktopSkillView();
+                }
+              },
+            ));
+  }
+}
 
-              ))
-        ]));
+class DesktopSkillView extends StatelessWidget {
+  const DesktopSkillView({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+      const AnimatedTextFlicker(title: "Skills", speed: Duration(milliseconds: 2000), pause: Duration.zero,fontSize: 72,),
+      CarouselSlider(
+          items: [
+            SkillCard(
+                skillname: "Unity",
+                skillLevel: "82/100",
+                skillRank: "Master",
+                imgSrc: "assets/Unity.png",
+                skillRankColor: Colors.purple.shade600,),
+            SkillCard(
+                skillname: "C#", skillLevel: "75/100", skillRank: "Apex", imgSrc: "assets/csharp.png", skillRankColor: Colors.red.shade500,),
+            SkillCard(
+                skillname: "Flutter/Dart",
+                skillLevel: "56/100",
+                skillRank: "Elite",
+                imgSrc: "assets/flutter.png",
+                skillRankColor: Colors.orange.shade500),
+            SkillCard(
+                skillname: "Blender",
+                skillLevel: "45/100",
+                skillRank: "Virtuoso",
+                imgSrc: "assets/blender.png",
+                skillRankColor: Colors.green.shade500),
+            SkillCard(
+                skillname: "Python",
+                skillLevel: "40/100",
+                skillRank: "Vangruard",
+                imgSrc: "assets/python.png",
+                skillRankColor: Colors.blue.shade500),
+          ],
+          options: CarouselOptions(
+            autoPlay: true,
+            disableCenter: true,
+            height: 400,
+            viewportFraction: 0.35,
+            enlargeCenterPage: true,
+
+          ))
+    ]);
+  }
+}
+class TabletSkillView extends StatelessWidget {
+  const TabletSkillView({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+      const AnimatedTextFlicker(title: "Skills", speed: Duration(milliseconds: 2000), pause: Duration.zero,fontSize: 70,),
+      CarouselSlider(
+          items: [
+            SkillCard(
+                skillname: "Unity",
+                skillLevel: "82/100",
+                skillRank: "Master",
+                imgSrc: "assets/Unity.png",
+                skillRankColor: Colors.purple.shade600,),
+            SkillCard(
+                skillname: "C#", skillLevel: "75/100", skillRank: "Apex", imgSrc: "assets/csharp.png", skillRankColor: Colors.red.shade500,),
+            SkillCard(
+                skillname: "Flutter/Dart",
+                skillLevel: "56/100",
+                skillRank: "Elite",
+                imgSrc: "assets/flutter.png",
+                skillRankColor: Colors.orange.shade500),
+            SkillCard(
+                skillname: "Blender",
+                skillLevel: "45/100",
+                skillRank: "Virtuoso",
+                imgSrc: "assets/blender.png",
+                skillRankColor: Colors.green.shade500),
+            SkillCard(
+                skillname: "Python",
+                skillLevel: "40/100",
+                skillRank: "Vangruard",
+                imgSrc: "assets/python.png",
+                skillRankColor: Colors.blue.shade500),
+          ],
+          options: CarouselOptions(
+            autoPlay: true,
+            disableCenter: true,
+            height: 400,
+            viewportFraction: 0.5,
+            enlargeCenterPage: true,
+
+          ))
+    ]);
+  }
+}
+class MobileSkillView extends StatelessWidget {
+  const MobileSkillView({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+      const AnimatedTextFlicker(title: "Skills", speed: Duration(milliseconds: 2000), pause: Duration.zero,fontSize: 55,),
+      CarouselSlider(
+          items: [
+            SkillCard(
+                skillname: "Unity",
+                skillLevel: "82/100",
+                skillRank: "Master",
+                imgSrc: "assets/Unity.png",
+                skillRankColor: Colors.purple.shade600,),
+            SkillCard(
+                skillname: "C#", skillLevel: "75/100", skillRank: "Apex", imgSrc: "assets/csharp.png", skillRankColor: Colors.red.shade500,),
+            SkillCard(
+                skillname: "Flutter/Dart",
+                skillLevel: "56/100",
+                skillRank: "Elite",
+                imgSrc: "assets/flutter.png",
+                skillRankColor: Colors.orange.shade500),
+            SkillCard(
+                skillname: "Blender",
+                skillLevel: "45/100",
+                skillRank: "Virtuoso",
+                imgSrc: "assets/blender.png",
+                skillRankColor: Colors.green.shade500),
+            SkillCard(
+                skillname: "Python",
+                skillLevel: "40/100",
+                skillRank: "Vangruard",
+                imgSrc: "assets/python.png",
+                skillRankColor: Colors.blue.shade500),
+          ],
+          options: CarouselOptions(
+            autoPlay: true,
+            disableCenter: true,
+            height: 500,
+            viewportFraction: 0.8,
+            enlargeCenterPage: true,
+
+          ))
+    ]);
   }
 }
 

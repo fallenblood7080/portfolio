@@ -14,42 +14,39 @@ class AchievementChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      flex: 1,
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: InkWell(
-          onTap: () {},
-          onHover: (isHover) {
-            if (isHover) {
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                content: Text(
-                  achievementDesc,
-                  style: GoogleFonts.teko(color: Colors.white,fontSize: 18),
-                  textAlign: TextAlign.center,
-                ),
-                backgroundColor: const Color(0xFF303030),
-                elevation: 5,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
-                width: MediaQuery.of(context).size.width/2,
-                behavior: SnackBarBehavior.floating,
-              ));
-            } else {
-              ScaffoldMessenger.of(context).clearSnackBars();
-            }
-          },
-          child: Chip(
-            label: Text(
-              achievementName,
-              style: GoogleFonts.teko(color: Colors.white, fontSize: 18),
-            ),
-            backgroundColor: bgColor,
-            elevation: 5,
-            padding: const EdgeInsets.all(4),
-            avatar: Icon(
-              MdiIcons.trophyVariant,
-              color: Colors.white,
-            ),
+    return Padding(
+      padding: const EdgeInsets.all(4.0),
+      child: InkWell(
+        onTap: () {},
+        onHover: (isHover) {
+          if (isHover) {
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              content: Text(
+                achievementDesc,
+                style: GoogleFonts.teko(color: Colors.white,fontSize: 18),
+                textAlign: TextAlign.center,
+              ),
+              backgroundColor: const Color(0xFF303030),
+              elevation: 5,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
+              width: MediaQuery.of(context).size.width/2,
+              behavior: SnackBarBehavior.floating,
+            ));
+          } else {
+            ScaffoldMessenger.of(context).clearSnackBars();
+          }
+        },
+        child: Chip(
+          label: Text(
+            achievementName,
+            style: GoogleFonts.teko(color: Colors.white, fontSize: 18),
+          ),
+          backgroundColor: bgColor,
+          elevation: 5,
+          padding: const EdgeInsets.all(4),
+          avatar: Icon(
+            MdiIcons.trophyVariant,
+            color: Colors.white,
           ),
         ),
       ),

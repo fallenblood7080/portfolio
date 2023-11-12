@@ -6,14 +6,14 @@ class AnimatedTextFlicker extends StatelessWidget {
   final String title;
   final Duration speed;
   final Duration pause;
+  final double fontSize;
   const AnimatedTextFlicker({
-    super.key, required this.title, required this.speed, required this.pause,
+    super.key, required this.title, required this.speed, required this.pause, required this.fontSize,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 500,
       height: 72,
       child: DefaultTextStyle(
         textAlign: TextAlign.center,
@@ -36,7 +36,7 @@ class AnimatedTextFlicker extends StatelessWidget {
               title.toUpperCase(),
               speed: speed,
               entryEnd: 0.3,
-              textStyle: GoogleFonts.teko(fontSize: 72, color: Colors.white),
+              textStyle: GoogleFonts.teko(fontSize: fontSize, color: Colors.white),
               textAlign: TextAlign.center,
             ),
           ],

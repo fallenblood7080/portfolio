@@ -15,34 +15,127 @@ class Clan extends StatelessWidget {
       width: double.infinity,
       color: const Color(0xFF151515),
       padding: const EdgeInsets.all(16),
-      child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-        const AnimatedTextFlicker(title: "Development Clan", speed: Duration(milliseconds: 2000), pause: Duration.zero),
-        CarouselSlider(items: const [
-                        ClanCard(
-                imgSrc: "assets/ideekay.jpeg",
-                clanName: "IDeeKay Studios",
-                position: "Game Developer - Intern",
-                dur: "April 2023",
-              ),
-              ClanCard(
-                imgSrc: "assets/gokapture.jpeg",
-                clanName: "GoKapture Event Technology",
-                position: "Game Developer",
-                dur: "April 2023 - September 2023",
-              ),
-              ClanCard(imgSrc: "assets/veda.jpg", clanName: "Veda Crew", position: "Game Developer", dur: "May 2023 - July 2023"),
-              ClanCard(imgSrc: "assets/scan.gif", clanName: "Insanity Crew", position: "Game Developer", dur: "November 2023 - Current"),
-        ], options: CarouselOptions(
-          height: 350,
-          disableCenter: true,
-          autoPlay: true,
-          enlargeCenterPage: true,
-         viewportFraction: 0.3,
-         enlargeFactor: 0.4,
-         autoPlayInterval: const Duration(seconds: 2)
-        ))
-      ]),
+      child: LayoutBuilder(builder: (context, constraints){
+        if(constraints.maxWidth < 500){
+          return const MobileClanView();
+        }
+        else if(constraints.maxWidth < 900){
+          return const TabletClanView();
+        }
+        else{
+          return const DesktopClanView();
+        }
+      },),
     );
+  }
+}
+
+class DesktopClanView extends StatelessWidget {
+  const DesktopClanView({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+      const AnimatedTextFlicker(title: "Development Clan", speed: Duration(milliseconds: 2000), pause: Duration.zero,fontSize: 72,),
+      CarouselSlider(items: const [
+                      ClanCard(
+              imgSrc: "assets/ideekay.jpeg",
+              clanName: "IDeeKay Studios",
+              position: "Game Developer - Intern",
+              dur: "April 2023",
+            ),
+            ClanCard(
+              imgSrc: "assets/gokapture.jpeg",
+              clanName: "GoKapture Event Technology",
+              position: "Game Developer",
+              dur: "April 2023 - September 2023",
+            ),
+            ClanCard(imgSrc: "assets/veda.jpg", clanName: "Veda Crew", position: "Game Developer", dur: "May 2023 - July 2023"),
+            ClanCard(imgSrc: "assets/insanity.png", clanName: "Insanity Crew", position: "Game Developer", dur: "November 2023 - Current"),
+      ], options: CarouselOptions(
+        height: 350,
+        disableCenter: true,
+        autoPlay: true,
+        enlargeCenterPage: true,
+       viewportFraction: 0.3,
+       enlargeFactor: 0.4,
+       autoPlayInterval: const Duration(seconds: 2)
+      ))
+    ]);
+  }
+}
+class TabletClanView extends StatelessWidget {
+  const TabletClanView({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+      const AnimatedTextFlicker(title: "Development Clan", speed: Duration(milliseconds: 2000), pause: Duration.zero,fontSize: 70,),
+      CarouselSlider(items: const [
+                      ClanCard(
+              imgSrc: "assets/ideekay.jpeg",
+              clanName: "IDeeKay Studios",
+              position: "Game Developer - Intern",
+              dur: "April 2023",
+            ),
+            ClanCard(
+              imgSrc: "assets/gokapture.jpeg",
+              clanName: "GoKapture Event Technology",
+              position: "Game Developer",
+              dur: "April 2023 - September 2023",
+            ),
+            ClanCard(imgSrc: "assets/veda.jpg", clanName: "Veda Crew", position: "Game Developer", dur: "May 2023 - July 2023"),
+            ClanCard(imgSrc: "assets/insanity.png", clanName: "Insanity Crew", position: "Game Developer", dur: "November 2023 - Current"),
+      ], options: CarouselOptions(
+        height: 350,
+        disableCenter: true,
+        autoPlay: true,
+        enlargeCenterPage: true,
+       viewportFraction: 0.45,
+       enlargeFactor: 0.4,
+       autoPlayInterval: const Duration(seconds: 2)
+      ))
+    ]);
+  }
+}
+class MobileClanView extends StatelessWidget {
+  const MobileClanView({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+      const AnimatedTextFlicker(title: "Development Clan", speed: Duration(milliseconds: 2000), pause: Duration.zero,fontSize: 55,),
+      CarouselSlider(items: const [
+                      ClanCard(
+              imgSrc: "assets/ideekay.jpeg",
+              clanName: "IDeeKay Studios",
+              position: "Game Developer - Intern",
+              dur: "April 2023",
+            ),
+            ClanCard(
+              imgSrc: "assets/gokapture.jpeg",
+              clanName: "GoKapture Event Technology",
+              position: "Game Developer",
+              dur: "April 2023 - September 2023",
+            ),
+            ClanCard(imgSrc: "assets/veda.jpg", clanName: "Veda Crew", position: "Game Developer", dur: "May 2023 - July 2023"),
+            ClanCard(imgSrc: "assets/insanity.png", clanName: "Insanity Crew", position: "Game Developer", dur: "November 2023 - Current"),
+      ], options: CarouselOptions(
+        height: 400,
+        disableCenter: true,
+        autoPlay: true,
+        enlargeCenterPage: true,
+       viewportFraction: 0.6,
+       enlargeFactor: 0.4,
+       autoPlayInterval: const Duration(seconds: 2)
+      ))
+    ]);
   }
 }
 
@@ -78,6 +171,8 @@ class ClanCard extends StatelessWidget {
               colors: [Color(0xFF252525), Color(0xFF151515)],
             )),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
               padding: const EdgeInsets.all(16.0),
@@ -92,15 +187,15 @@ class ClanCard extends StatelessWidget {
             ),
             Text(
               clanName,
-              style: GoogleFonts.teko(color: Colors.white, fontSize: 24),
+              style: GoogleFonts.teko(color: Colors.white, fontSize: 22),
             ),
             Text(
               position,
-              style: GoogleFonts.teko(color: Colors.white70, fontSize: 20),
+              style: GoogleFonts.teko(color: Colors.white70, fontSize: 18),
             ),
             Text(
               dur,
-              style: GoogleFonts.teko(color: Colors.white54, fontSize: 20),
+              style: GoogleFonts.teko(color: Colors.white54, fontSize: 18),
             ),
           ],
         ),
